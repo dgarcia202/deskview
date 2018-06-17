@@ -25,6 +25,8 @@
 </template>
 
 <script>
+const crypto = require('../services/crypto');
+
 export default {
   name: 'link-profile',
   data () {
@@ -35,8 +37,8 @@ export default {
   },
   methods: {
     connect: function () {
-        this.username='holaaa';
-        this.$emit('startConnect');
+        this.$emit('start-connect');
+        crypto.generateLocalKeyPair();
     }
   }
 }
